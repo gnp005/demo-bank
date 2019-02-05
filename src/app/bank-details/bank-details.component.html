@@ -1,0 +1,236 @@
+<div class="container">
+  <!-- div-1 -->
+  <div class="container">
+    <h3>Bank Details By Bank key</h3>
+    <br />
+    <div class="container" *ngIf="currentAccount">
+      <h5>Details</h5>
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          Bank key : {{ currentAccount.bankKey }}
+        </li>
+        <li class="list-inline-item">
+          Bank name : {{ currentAccount.bankName }}
+        </li>
+        <li class="list-inline-item">
+          bank branch : {{ currentAccount.bankBranch }}
+        </li>
+      </ul>
+      <ul class="list-inline">
+        <li class="list-inline-item">smart : {{ currentAccount.smart }}</li>
+        <li class="list-inline-item">
+          country Name : {{ currentAccount.countryName }}
+        </li>
+        <li class="list-inline-item">dummy : {{ currentAccount.dummy }}</li>
+      </ul>
+      <ul class="list-inline">
+        <li class="list-inline-item">City : {{ currentAccount.city }}</li>
+        <li class="list-inline-item">branch : {{ currentAccount.branch }}</li>
+        <li class="list-inline-item">
+          Bank group : {{ currentAccount.bankGroup }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <br />
+  <!-- end of div1 -->
+  <form [formGroup]="bankDetails" (ngSubmit)="save(); bankDetails.reset()">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Mode of payment</label>
+        <select
+          id="modeOfPayment"
+          class="form-control"
+          formControlName="modeOfPayment"
+        >
+          <option selected>please Select One</option>
+          <option>...</option>
+          <option>...</option>
+          <option>...</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Additional Comments</label>
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword4"
+          placeholder="dummy text"
+          formControlName="additionalComments"
+        />
+      </div>
+    </div>
+
+    <!-- 2nd row -->
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label>IHAN</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="dummy text"
+          formControlName="ihan"
+        />
+      </div>
+      <div class="form-group col-md-2">
+        <label>Bank Type</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Bank type"
+          formControlName="bankType"
+        />
+      </div>
+      <div class="form-group col-md-2">
+        <label>Currencies</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Currency"
+          formControlName="currencies"
+        />
+      </div>
+      <div class="form-group col-md-4">
+        <label>Bank Account</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Bank Account"
+          formControlName="bankAccount"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck" />
+        <label class="form-check-label" for="gridCheck">
+          Check me out
+        </label>
+      </div>
+    </div>
+    <!--  -->
+    <br />
+    <!-- 3 rd row  -->
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label>Control Key</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="control key"
+          formControlName="controlKey"
+        />
+      </div>
+      <div class="form-group col-md-4">
+        <label>Reference Details</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="reference details"
+          formControlName="referenceDetails"
+        />
+      </div>
+      <div class="form-group col-md-4">
+        <label>Account Fields</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="account fields"
+          formControlName="accountFields"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck" />
+        <label class="form-check-label" for="gridCheck">
+          Check me out
+        </label>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck" />
+        <label class="form-check-label" for="gridCheck">
+          Check me out
+        </label>
+      </div>
+    </div>
+    <!--  -->
+    <br />
+    <!-- 4th row -->
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label>DNC indicator</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="dnc indicator"
+          formControlName="dmcIndicator"
+        />
+      </div>
+      <div class="form-group col-md-4">
+        <label>Instructor Key</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Instructor Key"
+          formControlName="instructorKey"
+        />
+      </div>
+      <div class="form-group col-md-4">
+        <label>POC/PRO no</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="PCO/PRO no"
+          formControlName="pdo"
+        />
+      </div>
+    </div>
+    <!--  -->
+
+    <!-- Uploasd document -->
+    <div class="form-group form-inline">
+      <input class="form-control" />
+      <button class="btn btn-primary">
+        select
+      </button>
+    </div>
+    <div class="container">
+      <button class="btn-btn-primary">Upload</button>
+    </div>
+    <!--  -->
+    <br />
+    <!-- Additional Comments -->
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Additional Comments</label>
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="5"
+        formControlName="textArea"
+      ></textarea>
+    </div>
+    <!--  -->
+    <div class="row">
+      <div class="col">
+        <button
+          type="button"
+          (click)="addBankAccount()"
+          class="btn btn-primary"
+        >
+          Add bank Account
+        </button>
+      </div>
+      <div class="col">
+        <button type="button" (click)="clearForm()" class="btn btn-primary">
+          Clear Form
+        </button>
+      </div>
+      <div class="col">
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </form>
+</div>
